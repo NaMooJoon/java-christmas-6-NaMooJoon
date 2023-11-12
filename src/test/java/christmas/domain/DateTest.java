@@ -12,7 +12,7 @@ class DateTest {
     @ParameterizedTest
     @CsvSource({"0", "32"})
     void 예상_방문_날짜_예외_처리_확인(int number) {
-        assertThatThrownBy(() -> Date.of(number))
+        assertThatThrownBy(() -> Date.from(number))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
@@ -20,7 +20,7 @@ class DateTest {
     @ParameterizedTest
     @CsvSource({"3", "10", "17", "24", "25", "31"})
     void 특별_할인_해당_날짜_확인(int number) {
-        Date date = Date.of(number);
+        Date date = Date.from(number);
         assertThat(date.isSpecialDay() == true);
     }
 
@@ -28,7 +28,7 @@ class DateTest {
     @ParameterizedTest
     @CsvSource({"8", "16", "22", "30"})
     void 주말_날짜_확인(int number) {
-        Date date = Date.of(number);
+        Date date = Date.from(number);
         assertThat(date.isWeekend() == true);
     }
 

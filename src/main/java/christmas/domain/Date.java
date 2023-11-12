@@ -19,7 +19,7 @@ public class Date {
         this.date = date;
     }
 
-    public static Date of(int date) {
+    public static Date from(int date) {
         return new Date(date);
     }
 
