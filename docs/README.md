@@ -105,29 +105,45 @@
 - InputView
   - [x] 고객에게 예상 방문 날짜를 입력 받는다.
     - 숫자가 아닌 다른 문자가 입력 된다면, `InvalidDateException` 예외 발생
-  - [ ] 고객에게 주문할 메뉴와 개수를 입력 받는다.
+  - [x] 고객에게 주문할 메뉴와 개수를 입력 받는다.
     - 메뉴판에 없는 메뉴를 입력하는 경우, 예외 처리
     - 메뉴의 개수가 1이상이 아닌 경우, 예외 처리
     - 중복된 메뉴를 입력하는 경우, 예외처리
 - OutputView
-  - [ ] 주문 메뉴를 출력한다.
-  - [ ] 할인 전 총주문 금액을 출력한다.
-  - [ ] 증정 메뉴를 출력한다.
-  - [ ] 혜택 내역을 출력한다.
-  - [ ] 총혜택 금액을 출력한다.
-  - [ ] 12월 이벤트 배지를 출력한다.
+  - [x] 할인 전 총주문 금액을 출력한다.
+  - [x] 증정 메뉴를 출력한다.
+  - [x] 혜택 내역을 출력한다.
+  - [x] 총혜택 금액을 출력한다.
+  - [x] 12월 이벤트 배지를 출력한다.
 
 ### Domain
+- [x] EventCalculator
+  - Date, Order
+  - 증정 상품 반환
+  - 예상 계산 금액 반환
+  - 예상 배지 종류 반환
+  - 예상 총혜택 반환
+  - 예상 총할인 반환
 - [x] Date
   - date 날짜 저장
     - 1이상 31 이하의 숫자가 아닌 경우, `InvalidDateException` 예외 처리
+  - 크리스마스 할인 해당 날짜 확인
   - 주말 인지 아닌 지 확인
   - 특별 할인 해당 날짜 여부 확인
-- 메뉴: enum으로 관리?(name, price, 종류)
-- 주문: map<메뉴, int>,  
-- 날짜: date, day(MON,TUE...), isSpecial
-- 배지: enum(별, 트리, 산타)
-- 할인: 주문, 날짜
+- [x] Menu
+  - Enum: name, price, type
+- [x] Order
+  - Menu, count
+  - 존재하지 않는 메뉴가 입력 된 경우, `InvalidOrderException` 예외 처리
+  - 입력된 메뉴의 개수가 1이상이 아닌 경우, `InvalidOrderException` 예외 처리
+- [x] Orders
+  - List<Order>
+  - Order중에 중복된 Order가 존재 하는 경우, `InvalidOrderException` 예외 처리
+  - 주문 금액 총합 계산
+  - 주문 중 dessert 개수 확인
+  - 주문 중 main course 개수 확인
+- [x] Badge 
+  - enum(별, 트리, 산타)
 
 ### Controller
 - EventPlanner
