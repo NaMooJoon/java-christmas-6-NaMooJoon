@@ -23,7 +23,7 @@ public enum Menu {
     ZERO_COLA("제로콜라", 3_000, BEVERAGES),
     RED_WINE("레드와인", 60_000, BEVERAGES),
     CHAMPAGNE("샴페인", 25_000, BEVERAGES),
-    NONE(null, 0, null);
+    NONE("없음", 0, null);
 
 
     private String name;
@@ -47,5 +47,13 @@ public enum Menu {
 
     public String getName() {
         return name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public MenuType getType() {
+        return type;
     }
 }
