@@ -1,17 +1,10 @@
 package christmas.domain;
 
+import static christmas.domain.constants.DateNumber.*;
+
 import christmas.exception.InvalidDateException;
 
 public class Date {
-    private static final int MIN_DATE_NUMBER = 1;
-    private static final int MAX_DATE_NUMBER = 31;
-
-    private static final int DAYS_OF_WEEK_SIZE = 7;
-    private static final int FRIDAY_START_DATE_OF_DEC = 1;
-    private static final int SATDAY_START_DATE_OF_DEC = 2;
-    private static final int SUNDAY_START_DATE_OF_DEC = 3;
-    private static final int CHRISTMAS_DATE = 25;
-
     private int date;
 
     private Date(int date) {
@@ -27,8 +20,8 @@ public class Date {
         return date;
     }
 
-    public boolean isChristmas() {
-        return date <= CHRISTMAS_DATE;
+    public boolean isChristmasEventPeriod() {
+        return date <= CHRISTMAS_DATE.getDate();
     }
 
     public boolean isWeekday() {
@@ -36,32 +29,43 @@ public class Date {
     }
 
     public boolean isWeekend() {
-        if (date % DAYS_OF_WEEK_SIZE == FRIDAY_START_DATE_OF_DEC) {
-            return true;
-        }
-        if (date % DAYS_OF_WEEK_SIZE == SATDAY_START_DATE_OF_DEC) {
+        if (isFriday() || isSaturday()) {
             return true;
         }
         return false;
     }
 
     public boolean isSpecialDay() {
-        if (date % DAYS_OF_WEEK_SIZE == SUNDAY_START_DATE_OF_DEC) {
-            return true;
-        }
-        if (date == CHRISTMAS_DATE) {
+        if (isSunday() || isChristmasDay()) {
             return true;
         }
         return false;
     }
 
     private void validate(int date) {
-        if (date < MIN_DATE_NUMBER) {
+        if (isDateOutOfBound(date)) {
             throw new InvalidDateException();
         }
-        if (date > MAX_DATE_NUMBER) {
-            throw new InvalidDateException();
-        }
+    }
+
+    private boolean isFriday() {
+        return (date % DAYS_OF_WEEK_SIZE.getDate()) == FRIDAY_START_DATE_OF_DEC.getDate();
+    }
+
+    private boolean isSaturday() {
+        return (date % DAYS_OF_WEEK_SIZE.getDate()) == SATDAY_START_DATE_OF_DEC.getDate();
+    }
+
+    private boolean isSunday() {
+        return (date % DAYS_OF_WEEK_SIZE.getDate()) == SUNDAY_START_DATE_OF_DEC.getDate();
+    }
+
+    private boolean isChristmasDay() {
+        return date == CHRISTMAS_DATE.getDate();
+    }
+
+    private boolean isDateOutOfBound(int date) {
+        return date < MIN_DATE_NUMBER.getDate() || date > MAX_DATE_NUMBER.getDate();
     }
 
     @Override

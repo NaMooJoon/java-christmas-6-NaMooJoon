@@ -51,7 +51,7 @@ public class EventCalculator {
 
     private Benefits getTotalDiscounts() {
         List<Benefit> benefits = new ArrayList<>();
-        if (date.isChristmas()) {
+        if (date.isChristmasEventPeriod()) {
             benefits.add(Benefit.newChristmas(date));
         }
         if (date.isWeekday()) {
