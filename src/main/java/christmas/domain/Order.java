@@ -3,6 +3,7 @@ package christmas.domain;
 import static christmas.domain.constants.Menu.NONE;
 
 import christmas.domain.constants.Menu;
+import christmas.domain.constants.MenuType;
 import christmas.exception.InvalidOrderException;
 import java.util.Map;
 import java.util.Objects;
@@ -26,6 +27,18 @@ public class Order {
     public static Order nameAndCountOf(String name, int count) {
         Menu menu = Menu.getMenuConstantByName(name);
         return new Order(menu, count);
+    }
+
+    boolean isTypeOf(MenuType type) {
+        return menu.getType() == type;
+    }
+
+    public int getPrice() {
+        return menu.getPrice() * count;
+    }
+
+    public int getCount() {
+        return count;
     }
 
     private void validate(Menu menu, int count) {
