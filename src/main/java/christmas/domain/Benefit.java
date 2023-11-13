@@ -3,11 +3,11 @@ package christmas.domain;
 import static christmas.domain.constants.BenefitType.CHRISTMAS;
 import static christmas.domain.constants.BenefitType.SPECIAL_DAY;
 import static christmas.domain.constants.BenefitType.WEEKDAY;
-import static christmas.domain.constants.Discount.ADDITIONAL_CHRISTMAS_DISCOUNT;
-import static christmas.domain.constants.Discount.SPECIAL_DAY_DISCOUNT;
-import static christmas.domain.constants.Discount.START_OF_CHRISTMAS_DISCOUNT;
-import static christmas.domain.constants.Discount.WEEKDAY_DISCOUNT;
-import static christmas.domain.constants.Discount.WEEKEND_DISCOUNT;
+import static christmas.domain.constants.DiscountAmount.ADDITIONAL_CHRISTMAS_DISCOUNT;
+import static christmas.domain.constants.DiscountAmount.SPECIAL_DAY_DISCOUNT;
+import static christmas.domain.constants.DiscountAmount.START_OF_CHRISTMAS_DISCOUNT;
+import static christmas.domain.constants.DiscountAmount.WEEKDAY_DISCOUNT;
+import static christmas.domain.constants.DiscountAmount.WEEKEND_DISCOUNT;
 
 import christmas.domain.constants.BenefitType;
 import java.util.Locale;
