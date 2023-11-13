@@ -1,10 +1,10 @@
 package christmas;
 
-import christmas.controller.EventPlanner;
+import christmas.controller.EventController;
 
 public class Application {
     public static void main(String[] args) {
-        EventPlanner eventPlanner = new EventPlanner();
-        eventPlanner.start();
+        EventController eventController = new EventController();
+        eventController.start();
     }
 }
