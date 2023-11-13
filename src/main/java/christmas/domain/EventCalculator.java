@@ -29,7 +29,7 @@ public class EventCalculator {
         return null;
     }
 
-    public int getExpectedAmount() {
+    public int getExpectedAmountToPay() {
         return orders.getTotalAmount() - getTotalDiscounts().getTotalAmount();
     }
 
