@@ -3,6 +3,7 @@ package christmas.domain;
 import static christmas.domain.constants.BenefitType.CHRISTMAS;
 import static christmas.domain.constants.BenefitType.SPECIAL_DAY;
 import static christmas.domain.constants.BenefitType.WEEKDAY;
+import static christmas.domain.constants.BenefitType.WEEKEND;
 import static christmas.domain.constants.DiscountAmount.ADDITIONAL_CHRISTMAS_DISCOUNT;
 import static christmas.domain.constants.DiscountAmount.SPECIAL_DAY_DISCOUNT;
 import static christmas.domain.constants.DiscountAmount.START_OF_CHRISTMAS_DISCOUNT;
@@ -39,7 +40,7 @@ public class Benefit {
 
     public static Benefit newWeekend(int mainCourseCount) {
         int amount = WEEKEND_DISCOUNT.getAmount() * mainCourseCount;
-        return new Benefit(WEEKDAY, amount);
+        return new Benefit(WEEKEND, amount);
     }
 
     public static Benefit newSpecialDay() {
