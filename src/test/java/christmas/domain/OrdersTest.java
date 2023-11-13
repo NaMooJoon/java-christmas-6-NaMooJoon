@@ -1,7 +1,6 @@
 package christmas.domain;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +14,7 @@ class OrdersTest {
     void 중복_메뉴_예외_처리() {
         List<String> names = Arrays.asList("티본스테이크", "바비큐립", "초코케이크", "티본스테이크");
         List<Order> orders = names.stream()
-                .map(name -> Order.nameAndCountOf(name, 1))
+                .map(name -> Order.of(name, 1))
                 .collect(Collectors.toList());
         assertThatThrownBy(() -> Orders.from(orders))
                 .isInstanceOf(IllegalArgumentException.class);

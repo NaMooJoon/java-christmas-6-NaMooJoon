@@ -5,7 +5,6 @@ import static christmas.domain.constants.Menu.NONE;
 import christmas.domain.constants.Menu;
 import christmas.domain.constants.MenuType;
 import christmas.exception.InvalidOrderException;
-import java.util.Map;
 import java.util.Objects;
 
 public class Order {
@@ -20,11 +19,11 @@ public class Order {
         this.count = count;
     }
 
-    public static Order menuAndCountOf(Menu menu, int count) {
+    public static Order of(Menu menu, int count) {
         return new Order(menu, count);
     }
 
-    public static Order nameAndCountOf(String name, int count) {
+    public static Order of(String name, int count) {
         Menu menu = Menu.getMenuConstantByName(name);
         return new Order(menu, count);
     }

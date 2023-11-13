@@ -13,10 +13,10 @@ class EventCalculatorTest {
     @BeforeEach
     void setUp() {
         List<Order> orderList = new ArrayList<>();
-        orderList.add(Order.nameAndCountOf("티본스테이크", 1));
-        orderList.add(Order.nameAndCountOf("바비큐립", 1));
-        orderList.add(Order.nameAndCountOf("초코케이크", 2));
-        orderList.add(Order.nameAndCountOf("제로콜라", 1));
+        orderList.add(Order.of("티본스테이크", 1));
+        orderList.add(Order.of("바비큐립", 1));
+        orderList.add(Order.of("초코케이크", 2));
+        orderList.add(Order.of("제로콜라", 1));
 
         eventCalculator = EventCalculator.of(Date.from(3), Orders.from(orderList));
     }

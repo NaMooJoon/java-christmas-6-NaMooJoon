@@ -1,7 +1,6 @@
 package christmas.domain;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,14 +12,14 @@ class OrderTest {
     @ParameterizedTest
     @CsvSource({"해물파스타", "핫도그"})
     void 없는_메뉴_예외_처리(String name) {
-        assertThatThrownBy(() -> Order.nameAndCountOf(name, 1))
+        assertThatThrownBy(() -> Order.of(name, 1))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
     @DisplayName("고객이 입력한 메뉴의 개수가 1이상이 아닌 경우, 예외가 발생한다.")
     @Test
     void 메뉴_개수_예외_처리() {
-        assertThatThrownBy(() -> Order.nameAndCountOf("해산물파스타", 0))
+        assertThatThrownBy(() -> Order.of("해산물파스타", 0))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 

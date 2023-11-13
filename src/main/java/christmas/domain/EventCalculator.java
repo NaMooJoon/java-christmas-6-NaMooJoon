@@ -24,7 +24,7 @@ public class EventCalculator {
 
     public Order getEventGift() {
         if (canGetGift()) {
-            return Order.menuAndCountOf(CHAMPAGNE, 1);
+            return Order.of(CHAMPAGNE, 1);
         }
         return null;
     }

@@ -2,14 +2,10 @@ package christmas.view;
 
 import camp.nextstep.edu.missionutils.Console;
 import christmas.domain.Order;
-import christmas.domain.constants.Menu;
 import christmas.exception.InvalidDateException;
 import christmas.exception.InvalidOrderException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class InputView {
     private static final String DELIMITER_COMMA = ",";
@@ -37,7 +33,7 @@ public class InputView {
         try {
             for (String token : input.split(DELIMITER_COMMA)) {
                 String[] data = token.split(DELIMITER_DASH);
-                Order order = Order.nameAndCountOf(data[MENU_INDEX], Integer.parseInt(data[NUMBER_INDEX]));
+                Order order = Order.of(data[MENU_INDEX], Integer.parseInt(data[NUMBER_INDEX]));
                 orders.add(order);
             }
         } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
