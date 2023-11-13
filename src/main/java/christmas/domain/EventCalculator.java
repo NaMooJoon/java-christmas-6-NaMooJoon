@@ -55,7 +55,7 @@ public class EventCalculator {
             benefits.add(Benefit.newChristmas(date));
         }
         if (date.isWeekday()) {
-            benefits.add(Benefit.newWeekday(orders.getDesertCount()));
+            benefits.add(Benefit.newWeekday(orders.getDessertCount()));
         }
         if (date.isWeekend()) {
             benefits.add(Benefit.newWeekend(orders.getMainCourseCount()));

@@ -1,12 +1,10 @@
 package christmas.domain;
 
-import static christmas.domain.constants.Menu.CHAMPAGNE;
 import static christmas.domain.constants.MenuType.BEVERAGES;
 import static christmas.domain.constants.MenuType.DESSERTS;
 import static christmas.domain.constants.MenuType.MAIN_COURSES;
 
 import christmas.exception.InvalidOrderException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -32,7 +30,7 @@ public class Orders {
                 .sum();
     }
 
-    public int getDesertCount() {
+    public int getDessertCount() {
         return orders.stream()
                 .filter(order -> order.isTypeOf(DESSERTS))
                 .mapToInt(Order::getCount)
