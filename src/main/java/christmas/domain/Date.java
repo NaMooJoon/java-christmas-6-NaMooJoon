@@ -12,7 +12,7 @@ public class Date {
     private static final int SUNDAY_START_DATE_OF_DEC = 3;
     private static final int CHRISTMAS_DATE = 25;
 
-    int date;
+    private int date;
 
     private Date(int date) {
         validate(date);
@@ -23,13 +23,16 @@ public class Date {
         return new Date(date);
     }
 
-    private void validate(int date) {
-        if (date < MIN_DATE_NUMBER) {
-            throw new InvalidDateException();
-        }
-        if (date > MAX_DATE_NUMBER) {
-            throw new InvalidDateException();
-        }
+    public int getDate() {
+        return date;
+    }
+
+    public boolean isChristmas() {
+        return date <= CHRISTMAS_DATE;
+    }
+
+    public boolean isWeekday() {
+        return !isWeekend();
     }
 
     public boolean isWeekend() {
@@ -52,4 +55,17 @@ public class Date {
         return false;
     }
 
+    private void validate(int date) {
+        if (date < MIN_DATE_NUMBER) {
+            throw new InvalidDateException();
+        }
+        if (date > MAX_DATE_NUMBER) {
+            throw new InvalidDateException();
+        }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("12월 %d일", date);
+    }
 }
