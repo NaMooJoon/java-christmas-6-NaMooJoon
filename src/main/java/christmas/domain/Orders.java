@@ -45,7 +45,10 @@ public class Orders {
     }
 
     private void validateSize(List<Order> orders) {
-        if (orders.size() > MAX_ORDERS_NUMBER) {
+        int numberOfMenus = orders.stream()
+                .mapToInt(Order::getCount)
+                .sum();
+        if (numberOfMenus > MAX_ORDERS_NUMBER) {
             throw new InvalidOrderException();
         }
     }
@@ -71,7 +74,7 @@ public class Orders {
     @Override
     public String toString() {
         if (orders.isEmpty()) {
-            return "없음\n";
+            return "없음";
         }
         return orders.stream()
                 .map(Order::toString)

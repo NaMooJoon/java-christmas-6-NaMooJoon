@@ -35,8 +35,9 @@ public class OutputView {
 
     public void printTotalAmountOf(Benefits benefits) {
         System.out.println("<총혜택 금액>");
-        if (benefits == null) {
-            System.out.println("없음\n");
+        if (benefits.isEmpty()) {
+            System.out.println("0원");
+            System.out.println();
             return;
         }
 
@@ -59,10 +60,7 @@ public class OutputView {
 
     public void printBenefitsListMessage(Benefits benefits) {
         System.out.println("<혜택 내역>");
-        if (benefits == null) {
-            System.out.println("없음\n");
-            return;
-        }
+
         System.out.println(benefits.toString());
         System.out.println();
     }
