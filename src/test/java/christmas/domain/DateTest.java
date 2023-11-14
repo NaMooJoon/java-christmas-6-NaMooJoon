@@ -21,7 +21,8 @@ class DateTest {
     @CsvSource({"3", "10", "17", "24", "25", "31"})
     void 특별_할인_해당_날짜_확인(int number) {
         Date date = Date.from(number);
-        assertThat(date.isSpecialDay() == true);
+        assertThat(date.isSpecialDay())
+                .isEqualTo(true);
     }
 
     @DisplayName("주말을 확인할 수 있다.")
@@ -29,7 +30,8 @@ class DateTest {
     @CsvSource({"8", "16", "22", "30"})
     void 주말_날짜_확인(int number) {
         Date date = Date.from(number);
-        assertThat(date.isWeekend() == true);
+        assertThat(date.isWeekend())
+                .isEqualTo(true);
     }
 
 }
