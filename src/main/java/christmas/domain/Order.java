@@ -10,8 +10,8 @@ import java.util.Objects;
 public class Order {
     private static final int MINIMUM_ORDER_COUNT = 1;
 
-    private Menu menu;
-    private int count;
+    private final Menu menu;
+    private final int count;
 
     private Order(Menu menu, int count) {
         validate(menu, count);

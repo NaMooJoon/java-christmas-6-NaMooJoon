@@ -26,9 +26,9 @@ public enum Menu {
     NONE("없음", 0, null);
 
 
-    private String name;
-    private int price;
-    private MenuType type;
+    private final String name;
+    private final int price;
+    private final MenuType type;
 
     Menu(String name, int price, MenuType type) {
         this.name = name;

@@ -17,8 +17,8 @@ public enum Badge {
         return benefits >= 20_000;
     });
 
-    private String name;
-    private Predicate<Integer> isMatched;
+    private final String name;
+    private final Predicate<Integer> isMatched;
     Badge(String name, Predicate<Integer> isMatched) {
         this.name = name;
         this.isMatched = isMatched;

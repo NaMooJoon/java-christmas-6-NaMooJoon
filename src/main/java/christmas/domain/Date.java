@@ -5,7 +5,7 @@ import static christmas.domain.constants.DateNumber.*;
 import christmas.exception.InvalidDateException;
 
 public class Date {
-    private int date;
+    private final int date;
 
     private Date(int date) {
         validate(date);

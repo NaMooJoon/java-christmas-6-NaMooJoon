@@ -15,8 +15,8 @@ import java.util.Locale;
 import java.util.Objects;
 
 public class Benefit {
-    private BenefitType type;
-    private int amount;
+    private final BenefitType type;
+    private final int amount;
 
     private Benefit(BenefitType type, int amount) {
         this.type = type;

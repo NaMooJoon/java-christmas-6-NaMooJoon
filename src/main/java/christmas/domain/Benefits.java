@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Benefits {
-    private List<Benefit> benefits;
+    private final List<Benefit> benefits;
 
     private Benefits(List<Benefit> benefits) {
         validateDuplicate(benefits);

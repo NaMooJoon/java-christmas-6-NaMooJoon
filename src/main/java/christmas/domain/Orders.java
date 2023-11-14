@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class Orders {
     private static final int MAX_ORDERS_NUMBER = 20;
-    private List<Order> orders;
+    private final List<Order> orders;
 
     private Orders(List<Order> orders) {
         validateSize(orders);

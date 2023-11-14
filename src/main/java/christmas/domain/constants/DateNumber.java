@@ -10,7 +10,7 @@ public enum DateNumber {
     SUNDAY_START_DATE_OF_DEC(3),
     CHRISTMAS_DATE(25);
 
-    private int date;
+    private final int date;
 
     DateNumber(int date) {
         this.date = date;

@@ -7,7 +7,7 @@ public enum BenefitType {
     SPECIAL_DAY("특별 할인"),
     EVENT_GIFT("증정 이벤트");
 
-    private String discountName;
+    private final String discountName;
 
     BenefitType(String discountName) {
         this.discountName = discountName;

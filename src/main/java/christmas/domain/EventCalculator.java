@@ -9,8 +9,8 @@ import java.util.List;
 
 public class EventCalculator {
     private static final int GIFT_EVENT_MINIMUM_AMOUNT = 120_000;
-    private Date date;
-    private Orders orders;
+    private final Date date;
+    private final Orders orders;
 
     private EventCalculator(Date date, Orders orders) {
         this.date = date;
