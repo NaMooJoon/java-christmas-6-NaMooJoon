@@ -22,9 +22,8 @@ public class Benefits {
                 .sum();
     }
 
-    public void add(Benefit benefit) {
-        benefits.add(benefit);
-        validateDuplicate(benefits);
+    public boolean isEmpty() {
+        return benefits.isEmpty();
     }
 
     private void validateDuplicate(List<Benefit> benefits) {
@@ -37,7 +36,7 @@ public class Benefits {
     @Override
     public String toString() {
         if (benefits.isEmpty()) {
-            return "없음\n";
+            return "없음";
         }
         return benefits.stream()
                 .map(Benefit::toString)

@@ -30,7 +30,8 @@ public class EventCalculator {
     }
 
     public int getExpectedAmountToPay() {
-        return orders.getTotalAmount() - getTotalDiscounts().getTotalAmount();
+        Benefits discountBenefits = Benefits.from(getTotalDiscounts());
+        return orders.getTotalAmount() - discountBenefits.getTotalAmount();
     }
 
     public Badge getBadge() {
@@ -42,14 +43,14 @@ public class EventCalculator {
         if (orders.getTotalAmount() < 10_000) {
             return Benefits.from(new ArrayList<>());
         }
-        Benefits benefits = getTotalDiscounts();
+        List<Benefit> benefits = getTotalDiscounts();
         if (canGetGift()) {
             benefits.add(Benefit.of(BenefitType.EVENT_GIFT, getEventGift().getPrice()));
         }
-        return benefits;
+        return Benefits.from(benefits);
     }
 
-    private Benefits getTotalDiscounts() {
+    private List<Benefit> getTotalDiscounts() {
         List<Benefit> benefits = new ArrayList<>();
         if (date.isChristmasEventPeriod()) {
             benefits.add(Benefit.newChristmas(date));
@@ -63,7 +64,7 @@ public class EventCalculator {
         if (date.isSpecialDay()) {
             benefits.add(Benefit.newSpecialDay());
         }
-        return Benefits.from(benefits);
+        return benefits;
     }
 
     private boolean canGetGift() {
