@@ -25,7 +25,7 @@ class OrderTest {
 
     @DisplayName("Order 클래스 생성 정상 확인")
     @ParameterizedTest
-    @CsvSource({"양송이수프, 1","시저샐러드, 2", "티본스테이크, 3", "제로콜라, 4"})
+    @CsvSource({"양송이수프, 1", "시저샐러드, 2", "티본스테이크, 3", "제로콜라, 4"})
     void 메뉴_생성_확인() {
 
     }

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 class EventCalculatorTest {
     EventCalculator eventCalculator;
+
     @BeforeEach
     void setUp() {
         List<Order> orderList = new ArrayList<>();

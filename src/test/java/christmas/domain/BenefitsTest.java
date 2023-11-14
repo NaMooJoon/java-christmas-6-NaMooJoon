@@ -5,7 +5,6 @@ import static christmas.domain.constants.BenefitType.SPECIAL_DAY;
 import static christmas.domain.constants.BenefitType.WEEKDAY;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.List;

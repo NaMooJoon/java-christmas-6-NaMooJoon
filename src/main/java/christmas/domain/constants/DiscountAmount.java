@@ -8,8 +8,8 @@ public enum DiscountAmount {
     SPECIAL_DAY_DISCOUNT(1_000);
 
 
-
     private final int amount;
+
     DiscountAmount(int amount) {
         this.amount = amount;
     }

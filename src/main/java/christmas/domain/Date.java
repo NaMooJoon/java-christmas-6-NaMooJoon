@@ -1,6 +1,12 @@
 package christmas.domain;
 
-import static christmas.domain.constants.DateNumber.*;
+import static christmas.domain.constants.DateNumber.CHRISTMAS_DATE;
+import static christmas.domain.constants.DateNumber.DAYS_OF_WEEK_SIZE;
+import static christmas.domain.constants.DateNumber.FRIDAY_START_DATE_OF_DEC;
+import static christmas.domain.constants.DateNumber.MAX_DATE_NUMBER;
+import static christmas.domain.constants.DateNumber.MIN_DATE_NUMBER;
+import static christmas.domain.constants.DateNumber.SATDAY_START_DATE_OF_DEC;
+import static christmas.domain.constants.DateNumber.SUNDAY_START_DATE_OF_DEC;
 
 import christmas.exception.InvalidDateException;
 

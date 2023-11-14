@@ -5,9 +5,7 @@ import static christmas.domain.constants.BenefitType.SPECIAL_DAY;
 import static christmas.domain.constants.BenefitType.WEEKDAY;
 import static christmas.domain.constants.BenefitType.WEEKEND;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
-import christmas.domain.constants.BenefitType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

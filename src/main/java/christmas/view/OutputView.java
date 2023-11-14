@@ -1,7 +1,7 @@
 package christmas.view;
 
-import christmas.domain.Date;
 import christmas.domain.Benefits;
+import christmas.domain.Date;
 import christmas.domain.Order;
 import christmas.domain.Orders;
 import christmas.domain.constants.Badge;
@@ -14,7 +14,7 @@ public class OutputView {
     }
 
     public void printStartingPreviewMessage(Date date) {
-        System.out.println(date.toString() +"에 우테코 식당에서 받을 이벤트 혜택 미리 보기!");
+        System.out.println(date.toString() + "에 우테코 식당에서 받을 이벤트 혜택 미리 보기!");
         System.out.println();
     }
 
